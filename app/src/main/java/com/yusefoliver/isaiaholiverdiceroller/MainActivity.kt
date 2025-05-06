@@ -19,6 +19,7 @@ class MainActivity : ComponentActivity() {
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
+                Text("Dice Roll: $diceRoll", style = MaterialTheme.typography.headlineMedium)
                 Button(onClick = { diceRoll = Random.nextInt(1, 7) }) {
                     Text("Roll Dice")
                 }
