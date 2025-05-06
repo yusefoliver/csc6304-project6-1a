@@ -15,15 +15,22 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             var diceRoll by remember { mutableStateOf(1) }
-            Column(
-                modifier = Modifier.fillMaxSize(),
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Text("Dice Roll: $diceRoll", style = MaterialTheme.typography.headlineMedium)
-                Spacer(modifier = Modifier.height(16.dp))
-                Button(onClick = { diceRoll = Random.nextInt(1, 7) }) {
-                    Text("Roll Dice")
+            Scaffold {
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(it),
+                    verticalArrangement = Arrangement.SpaceBetween,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Button(
+                        onClick = { diceRoll = Random.nextInt(1, 7) },
+                        modifier = Modifier
+                            .padding(bottom = 32.dp)
+                            .fillMaxWidth(0.5f)
+                    ) {
+                        Text("Roll Dice")
+                    }
                 }
             }
         }
