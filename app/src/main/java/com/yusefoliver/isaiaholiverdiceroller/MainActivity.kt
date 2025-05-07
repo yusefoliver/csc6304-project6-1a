@@ -23,6 +23,15 @@ class MainActivity : ComponentActivity() {
                     verticalArrangement = Arrangement.SpaceBetween,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
+                    Text(
+                        text = "Dice Roll:",
+                        style = MaterialTheme.typography.headlineMedium,
+                        modifier = Modifier.padding(top = 32.dp)
+                    )
+                    Text(
+                        text = "$diceRoll",
+                        style = MaterialTheme.typography.displayLarge
+                    )
                     Button(
                         onClick = { diceRoll = Random.nextInt(1, 7) },
                         modifier = Modifier
